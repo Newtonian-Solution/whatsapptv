@@ -139,11 +139,12 @@ const handleListClick = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          marginTop:'1rem'
         }}
-        topPadding="1.5"
-        leftPadding="1.5"
-        rightPadding="1.5"
-        bottomPadding="1.5"
+        topPadding="1"
+        leftPadding="1"
+        rightPadding="1"
+        bottomPadding="1"
         className="add-listing-phone"
         onClick={handleListClick}
       >
