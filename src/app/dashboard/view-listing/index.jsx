@@ -80,7 +80,7 @@ const ViewListing = () => {
         size={20}
         onClick={() => navigate(-1)}
       />
-      <CustomContainer leftMargin="6" bottomMargin="2">
+      <CustomContainer leftMargin="8" topMargin='1' bottomMargin="2">
         <select
           name="listType"
           id="listType"
