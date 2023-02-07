@@ -12,6 +12,7 @@ const VisibilityReducer = (state, action) => {
 export const VisibilityProvider = (props) => {
   const [state, dispatch] = useReducer(VisibilityReducer, {
     isLoading: false,
+    notification: { status: false, message: "", title: "", type: "success" },
   });
 
   async function loader(value) {
@@ -20,8 +21,47 @@ export const VisibilityProvider = (props) => {
       payload: { key: "isLoading", value },
     });
   }
+  const notifier = {
+    show: async function (message, title, type) {
+      const messageType = type ? type.toLowerCase() : "error";
+      const messageTitle = title
+        ? title
+        : title === null
+        ? messageType === "success"
+          ? "Success Response"
+          : "Error Response"
+        : "";
+      await dispatch({
+        type: "set-visibility",
+        payload: {
+          key: "notification",
+          value: {
+            status: message ? true : false,
+            message,
+            type: messageType,
+            title: messageTitle,
+          },
+        },
+      });
+    },
+    hide: async function () {
+      await dispatch({
+        type: "set-visibility",
+        payload: {
+          key: "notification",
+          value: {
+            status: false,
+            message: state.notification.message,
+            type: state.notification.type,
+            title: state.notification.title,
+          },
+        },
+      });
+    },
+  };
   const stateActions = {
     loader,
+    notifier
   };
 
    return (

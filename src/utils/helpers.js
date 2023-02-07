@@ -23,3 +23,14 @@ export function calcDayPassed(date1, date2) {
  const dayPassed =  Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
  return dayPassed <= 2
 }
+
+export const erroMessage = (text) => {
+  return  `Message: ${text || "An error occured"}`;
+};
+
+export const catchErrMsg = (err) => {
+  let message = err?.response?.data?.message;
+
+  if (err.response?.status === 500) message = "Something went wrong (Server)";
+  return message;
+};

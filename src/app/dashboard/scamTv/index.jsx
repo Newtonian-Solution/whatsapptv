@@ -5,6 +5,7 @@ import {
   AppSpan,
   AppText,
   AppLink,
+  Button
 } from "../../app-styles";
 import "./index.scss";
 import { useContext, useState, useEffect } from "react";
@@ -46,13 +47,13 @@ const ScamTv = () => {
       </ScreenTitle>
       <FlexColumn wrap="wrap" gap="2">
         {allListing
-          .filter((list) => list.category === 1)
+          .filter((list) => list.category === 2)
           .map((list) => (
             <CustomContainer
               width="35"
-              borderColor="#4ade80"
               radius="1"
               key={list.key}
+              style={{ boxShadow: "0 1rem 2rem rgba(0,0,0,.3)" }}
             >
               <CustomContainer width="35" height="20">
                 <img src={list.image} alt="" width="100%" height="100%" />
@@ -92,7 +93,7 @@ const ScamTv = () => {
                       href={list.link}
                       target="_blank"
                     >
-                      {list.link}
+                      <Button bgColor='#4ade80'>Click Here</Button>
                     </AppLink>
                   </CustomContainer>
                   <AppText

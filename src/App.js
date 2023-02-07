@@ -17,6 +17,7 @@ import ViewListing from "./app/dashboard/view-listing";
 import LegitTv from "./app/dashboard/legitTv";
 import ScamTv from "./app/dashboard/scamTv";
 import SearchTv from "./app/dashboard/searchedTv";
+import { PopUps } from "./components/PopUps";
 function App() {
   const {visibility} = useContext(VisibilityContext)
   const {recoverUserData,user:{profile,tokenExpire,token},logout} = useContext(UserContext)
@@ -34,7 +35,8 @@ function App() {
 // },[token,tokenExpire])
   return (
     <>
-      {visibility.isLoading ? <Loader /> : null}
+    <PopUps />
+      {/* {visibility.isLoading ? <Loader /> : null} */}
       <Router>
         <Nav />
         <Routes>

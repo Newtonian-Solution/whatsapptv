@@ -1,4 +1,4 @@
-import { CustomContainer, FlexColumn, ScreenTitle ,AppSpan,AppText,AppLink} from '../../app-styles'
+import { CustomContainer, FlexColumn, ScreenTitle ,AppSpan,AppText,AppLink,FlexRow,Button} from '../../app-styles'
 import './index.scss'
 import { useContext,useState,useEffect } from 'react'
 import UserContext from '../../../provider/state-manager/userProvider'
@@ -37,16 +37,16 @@ const LegitTv = () => {
       >
         All Legit TVs
       </ScreenTitle>
-      <FlexColumn wrap="wrap" gap="2">
+      <FlexRow wrap="wrap" gap="2">
         {allListing
-          .filter((list) => list.category === 1)
+          .filter((list) => list.category === 1 || list.category === 3)
           .map((list) => (
             <CustomContainer
               width="35"
-              borderColor="#4ade80"
               radius="1"
               key={list.id}
               topMargin="10"
+              style={{ boxShadow: "0 1rem 2rem rgba(0,0,0,.3)" }}
             >
               <CustomContainer width="35" height="20">
                 <img src={list.image} alt="" width="100%" height="100%" />
@@ -86,7 +86,7 @@ const LegitTv = () => {
                       href={list.link}
                       target="_blank"
                     >
-                      {list.link}
+                      <Button bgColor='#4ade80'>Click Here</Button>
                     </AppLink>
                   </CustomContainer>
                   <AppText
@@ -107,7 +107,7 @@ const LegitTv = () => {
               </FlexColumn>
             </CustomContainer>
           ))}
-      </FlexColumn>
+      </FlexRow>
     </CustomContainer>
   );
 }

@@ -145,6 +145,7 @@ const Home = () => {
               leftPadding="3"
               rightPadding="3"
               bottomPadding="2"
+              style={{ boxShadow: "0 1rem 2rem rgba(0,0,0,.3)" }}
             >
               <AppText
                 topPadding="1"
@@ -179,6 +180,7 @@ const Home = () => {
               leftPadding="3"
               rightPadding="3"
               bottomPadding="2"
+              style={{ boxShadow: "0 1rem 2rem rgba(0,0,0,.3)" }}
             >
               <AppText
                 topPadding="1"
@@ -252,9 +254,14 @@ const Home = () => {
           Recommended TVs...
         </ScreenTitle>
         <FlexRow gap="4" wrap="wrap">
-          {allListing?.filter((list) => list.category === 3)
+          {allListing
+            ?.filter((list) => list.category === 3)
             .map((list) => (
-              <CustomContainer width="40" borderColor="#4ade80" radius="1">
+              <CustomContainer
+                width="40"
+                radius="1"
+                style={{ boxShadow: "0 1rem 2rem rgba(0,0,0,.3)" }}
+              >
                 <CustomContainer width="40" height="20">
                   <img src={list.image} alt="" width="100%" height="100%" />
                 </CustomContainer>
@@ -317,7 +324,7 @@ const Home = () => {
                     href={list.link}
                     target="_blank"
                   >
-                    {list.link}
+                    <Button bgColor="#4ade80">Click Here</Button>
                   </AppLink>
                   <AppText color="rgba(0,0,0,.7)" topMargin="1">
                     Email Address:{" "}
@@ -342,13 +349,16 @@ const Home = () => {
           color="rgba(0,0,0,.7)"
           textSize="5"
           fontWeight="500"
-        
         >
           Most Recent TVs
         </ScreenTitle>
-        <FlexRow wrap="wrap" gap="2" topMargin='3'>
+        <FlexRow wrap="wrap" gap="2" topMargin="3">
           {recent?.map((list) => (
-            <CustomContainer width="40" borderColor="#4ade80" radius="1">
+            <CustomContainer
+              width="40"
+              radius="1"
+              style={{ boxShadow: "0 1rem 1.5rem rgba(0,0,0,.2)" }}
+            >
               <CustomContainer width="40" height="20">
                 <img src={list.image} alt="" width="100%" height="100%" />
               </CustomContainer>
@@ -412,7 +422,7 @@ const Home = () => {
                   target="_blank"
                   fontWeight="500"
                 >
-                  {list.link}
+                <Button bgColor='#4ade80'>Click Here</Button>
                 </AppLink>
                 <AppText color="rgba(0,0,0,.7)" topMargin="1">
                   Email Address:{" "}
