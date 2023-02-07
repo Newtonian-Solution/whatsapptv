@@ -12,7 +12,7 @@ export function formatDate(value) {
   return formatted
 }
 export function allLegit (value) {
-  const tv = value.filter(item => item.category === 1)
+  const tv = value.filter(item => item.category === 1 || item.category === 3)
   return tv.length
 }
 export function allScam (value) {
