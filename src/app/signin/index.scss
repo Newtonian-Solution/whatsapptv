@@ -1,0 +1,19 @@
+
+.close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.container {
+    height: 100vh !important;
+    
+}
+.input--label {
+    display: inline-block ;
+    margin-bottom: .4rem !important;
+}
+.box--container {
+ @media (max-width: 800px) {
+    width: 50rem !important;
+ }
+}
