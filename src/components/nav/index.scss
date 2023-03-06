@@ -1,0 +1,167 @@
+@import '/src//index.scss';
+.nav__items {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  @media (max-width:1050px) {
+flex-direction: column;
+position: absolute;
+top: 0;
+left: -30rem;
+transition: all .2s;
+z-index: 100;
+background-color: #fff;
+width: 30rem;
+height: 100vh;
+align-items: center;
+padding-top: 5rem;
+  }
+}
+.nav__item {
+  font-size: 1.5rem;
+  list-style: none;
+  padding: 1rem;
+  transition: all 0.2s;
+  border-radius: 10px;
+  @media(max-width: 700px) {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    padding: 2rem;
+  }
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+  }
+   a:hover {
+    color: orange !important;
+  }
+
+
+}
+
+    .nav__icon {
+    display: none;
+    visibility: hidden;
+   
+    @media (max-width: 1050px) {
+      display: block;
+      visibility: visible;
+    }
+  }
+
+  .navigation__button {
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 4rem;
+   right: 0;
+    border-radius: 50%;
+    z-index: 4000;
+    @include respond(tab-port) {
+      right: 0;
+    }
+    @media (max-width: 310px) {
+      top: 2rem;
+    }
+
+    text-align: center;
+    cursor: pointer;
+  }
+  .navigation__checkbox {
+    display: none;
+  }
+
+  .navigation__icon {
+    position: relative;
+    margin-top: 2rem;
+  }
+  .navigation__icon,
+  .navigation__icon::before,
+  .navigation__icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #000;
+    display: inline-block;
+  }
+  .navigation__icon::before,
+  .navigation__icon::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    transition: all 0.2s;
+  }
+  .navigation__icon::before {
+    top: -0.6rem;
+  }
+  .navigation__icon::after {
+    top: 0.6rem;
+  }
+  .navigation__button:hover .navigation__icon::before {
+    top: -0.7rem;
+  }
+  .navigation__button:hover .navigation__icon::after {
+    top: 0.7rem;
+  }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon {
+    background-color: transparent;
+  }
+
+  .navigation__checkbox:checked + .navigation__button .navigation__icon:after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon:before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  .active {
+    left: 0;
+  }
+  .add-listing {
+@media(max-width:1050px) {
+    margin-right: 20rem !important;
+}
+@media(max-width:600px) {
+    display: none !important;
+}
+  }
+  .add-listing-phone {
+    display: none !important;
+    @media(max-width:600px) {
+        display: inline-block !important;
+        margin-right: 10rem !important;
+    }
+  }
+  .logo--container {
+    @media (max-width:370px) {
+        width: 13rem !important;
+    }
+    .logo {
+        @media(max-width: 370px) {
+            width: 100%;
+        }
+    }
+  }
+  .email {
+    position: relative;
+
+    &:hover > .dropdown {
+opacity: 1;
+    }
+  }
+  .dropdown {
+    position: absolute !important;
+    top: 4rem !important;
+    opacity: 0;
+    transition: all .2s;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    background-color: #fff !important;
+  }
+  .dropdown-item  {
+&:hover  {
+  color: orange !important;
+}
+  }

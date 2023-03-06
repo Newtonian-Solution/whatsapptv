@@ -1,0 +1,39 @@
+.input-search {
+    position: relative;
+}
+.search-icon {
+ position: absolute;
+ right: 2rem;
+ top: 2rem;
+ color: rgba(0,0,0,.5);
+}
+.screenTitle{
+    @media(max-width:700px) {
+        font-size: 3rem !important;
+    }
+}
+.screenTitle2{
+    @media(max-width:700px) {
+        font-size: 2rem !important;
+    }
+}
+.input-container{
+    @media(max-width:700px) {
+    width: 30rem !important;
+
+    }
+}
+.search-btn{
+
+    @media(max-width:700px) {
+    width: 30rem !important;
+
+    }
+}
+.tv-icon {
+    display: block;
+    margin-top: 3rem;
+}
+.whatsapp-link {
+    line-height: 30px;
+}

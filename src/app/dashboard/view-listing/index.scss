@@ -1,0 +1,24 @@
+.list-select{
+    padding: 1.5rem;
+    color: rgba(0,0,0,.6);
+
+    &:focus{
+        outline: none;
+    }
+}
+.input-search {
+    position: relative;
+    padding: 2rem 2rem;
+    box-shadow: 0 10px 3rem rgba(0,0,0,.15);
+    border: none;
+    width: 100%;
+    &:focus {
+        outline: none;
+    }
+}
+.search-icon {
+ position: absolute;
+ right: 2rem;
+ top: 2rem;
+ color: rgba(0,0,0,.5);
+}
