@@ -37,7 +37,6 @@ export const UserProvider = (props) => {
 async function setAllListing(value) {
     await dispatch({type:"set-property", payload:{key:"allListing", value}})
 }
-
     async function clearuserData() {
         await dispatch({type: "clear-user-data", payload: null})
     }

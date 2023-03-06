@@ -28,10 +28,7 @@ function App() {
   recoverUserData()
 },[])
 // useEffect(() => {
-//   const checkExpiration = () => {
 //     if(token && new Date().getTime() > tokenExpire) {
-//         logout()
-//     }
 //   };
 //   checkExpiration();
 // },[token,tokenExpire])
